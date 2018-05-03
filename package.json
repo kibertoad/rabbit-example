@@ -1,0 +1,53 @@
+{
+  "name": "mq-sandbox",
+  "version": "1.0.0",
+  "description": "mq sandbox",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha ./test",
+    "test-coverage": "nyc npm test",
+    "lint": "eslint . -f node_modules/eslint-html-reporter/reporter.js -o build/reports/eslint.html",
+    "lint-to-console": "eslint .",
+    "prettier": "prettier --write \"{lib,tests}/**/*.{js,ts}\""
+  },
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Igor Savin",
+      "email": "kibertoad@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "amqplib": "^0.5.2",
+    "config": "^1.30.0"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "sinon": "^5.0.3",
+    "lodash": "^4.17.10",
+    "nyc": "^11.7.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "prettier": "^1.12.1",
+    "testing-utils": "^1.0.0"
+  },
+  "nyc": {
+    "description": "test coverage",
+    "include": [
+      "src/**"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "cache": true,
+    "all": true,
+    "report-dir": "./build/reports/coverage",
+    "check-coverage": true,
+    "lines": 50,
+    "statements": 50,
+    "functions": 66,
+    "branches": 33
+  }
+}
